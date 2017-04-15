@@ -1,0 +1,34 @@
+{
+  "metadata": {
+    "spec-version": "1.0"
+  },
+  "configuration-groups": [
+    {
+      "label": "Email Properties",
+      "properties": [
+        {
+          "widget-type": "select",
+          "label": "Run Condition",
+          "name": "runCondition",    
+          "widget-attributes": {
+            "values": [
+              "completion",
+              "success",
+              "failure"
+            ],
+            "default": "completion"
+          }
+        },
+        {
+          "widget-type": "textbox",
+          "label": "Name",
+          "name": "name",
+          "widget-attributes" : {
+            "placeholder" : "This is a placeholder for name."
+          }
+        }
+      ]
+    }
+  ],
+  "outputs": []
+}
