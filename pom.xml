@@ -18,18 +18,18 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
-  <groupId>org.example</groupId>
-  <artifactId>example-notification</artifactId>
+  <groupId>co.cask</groupId>
+  <artifactId>trigger-pipeline</artifactId>
   <version>1.0.0-SNAPSHOT</version>
-  <name>Example Notification</name>
+  <name>Trigger CDAP Pipeline</name>
   <packaging>jar</packaging>
-  <description>Example implementation of notification plugin.</description>
+  <description>Triggers other pipelines based on conditions. Works only in non-secured mode.</description>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <etl.versionRange>[4.0.0,10.0.0-SNAPSHOT)</etl.versionRange>
-    <app.parents>system:system:cdap-data-pipeline[4.1.0,4.2.0),system:cdap-data-streams[4.1.0,4.2.0)</app.parents>
-    <cdap.version>4.1.0</cdap.version>
+    <app.parents>system:cdap-data-pipeline[4.1.0,4.2.0),system:cdap-data-streams[4.1.0,4.2.0)</app.parents>
+    <cdap.version>4.1.1</cdap.version>
     <hydrator.version>1.6.0</hydrator.version>
     <hadoop.version>2.3.0</hadoop.version>
     <junit.version>4.11</junit.version>
@@ -40,17 +40,17 @@
 
   <developers>
     <developer>
-      <name>Example Organization</name>
-      <email>email@example.com</email>
-      <organization>Example Organization, Inc.</organization>
-      <organizationUrl>http://www.example.com</organizationUrl>
+      <name>Cask Data, Inc.</name>
+      <email>cdap-user@googlegroups.com</email>
+      <organization>Cask Data, Inc.</organization>
+      <organizationUrl>http://cask.co</organizationUrl>
     </developer>
   </developers>
 
   <scm>
-    <connection>scm:git:https://github.com/hydrator/example-notification.git</connection>
-    <developerConnection>scm:git:git@github.com:hydrator/example-notification.git</developerConnection>
-    <url>https://github.com/hydrator/example-notification.git</url>
+    <connection>scm:git:https://github.com/hydrator/notify-pipeline.git</connection>
+    <developerConnection>scm:git:git@github.com:hydrator/notify-pipeline.git</developerConnection>
+    <url>https://github.com/hydrator/notify-pipeline.git</url>
     <tag>HEAD</tag>
   </scm>
 
@@ -64,13 +64,13 @@
       <url>https://oss.sonatype.org/content/repositories/snapshots</url>
     </snapshotRepository>
     <site>
-      <id>example</id>
-      <url>http://example.co</url>
+      <id>cask</id>
+      <url>http://cask.co</url>
     </site>
   </distributionManagement>
 
   <issueManagement>
-    <url>https://issues.example.co/browse/CDAP</url>
+    <url>https://issues.cask.co/browse/CDAP</url>
   </issueManagement>
 
   <licenses>
@@ -94,6 +94,11 @@
   </repositories>
 
   <dependencies>
+    <dependency>
+      <groupId>org.apache.httpcomponents</groupId>
+      <artifactId>httpclient</artifactId>
+      <version>4.5.3</version>
+    </dependency>
     <dependency>
       <groupId>co.cask.cdap</groupId>
       <artifactId>cdap-etl-api</artifactId>
@@ -165,7 +170,7 @@
               <Embed-Transitive>true</Embed-Transitive>
               <Embed-Directory>lib</Embed-Directory>
               <!--Only @Plugin classes in the export packages will be included as plugin-->
-              <_exportcontents>org.example.*</_exportcontents>
+              <_exportcontents>co.cask.*</_exportcontents>
             </instructions>
           </configuration>
           <executions>
