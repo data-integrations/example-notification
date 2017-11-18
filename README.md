@@ -1,5 +1,10 @@
 # Notification Example using Post Run Action.
 
+<img  alt="Not Available in Cask Market" src="https://cdap-users.herokuapp.com/assets/cm-notavailable.svg"/> ![cdap-action](https://cdap-users.herokuapp.com/assets/cdap-action.svg)
+[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
+[![Join CDAP community](https://cdap-users.herokuapp.com/badge.svg?t=wrangler)](https://cdap-users.herokuapp.com?t=1)
+
+
 This is a an example repository for building notification using PostAction plugin type.
 These type of plugins are executed currently only within batch pipelines. They are
 executed at the end of the pipeline execution irrespective of the status of the
