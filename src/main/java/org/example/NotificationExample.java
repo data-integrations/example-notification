@@ -1,15 +1,15 @@
 package org.example;
 
-import co.cask.cdap.api.annotation.Description;
-import co.cask.cdap.api.annotation.Macro;
-import co.cask.cdap.api.annotation.Name;
-import co.cask.cdap.api.annotation.Plugin;
-import co.cask.cdap.api.workflow.WorkflowNodeState;
-import co.cask.cdap.api.workflow.WorkflowToken;
-import co.cask.cdap.etl.api.PipelineConfigurer;
-import co.cask.cdap.etl.api.batch.BatchActionContext;
-import co.cask.cdap.etl.api.batch.PostAction;
-import co.cask.hydrator.common.batch.action.ConditionConfig;
+import io.cdap.cdap.api.annotation.Description;
+import io.cdap.cdap.api.annotation.Macro;
+import io.cdap.cdap.api.annotation.Name;
+import io.cdap.cdap.api.annotation.Plugin;
+import io.cdap.cdap.api.workflow.WorkflowNodeState;
+import io.cdap.cdap.api.workflow.WorkflowToken;
+import io.cdap.cdap.etl.api.PipelineConfigurer;
+import io.cdap.cdap.etl.api.batch.BatchActionContext;
+import io.cdap.cdap.etl.api.batch.PostAction;
+import io.cdap.plugin.common.batch.action.ConditionConfig;
 
 import java.util.Map;
 
