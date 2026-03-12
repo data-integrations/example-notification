@@ -30,7 +30,7 @@
     <cdap.version>6.0.0-SNAPSHOT</cdap.version>
     <hydrator.version>2.2.0-SNAPSHOT</hydrator.version>
     <hadoop.version>2.3.0</hadoop.version>
-    <junit.version>4.11</junit.version>
+    <junit.version>4.13.1</junit.version>
     <widgets.dir>widgets</widgets.dir>
     <docs.dir>docs</docs.dir>
     <main.basedir>${project.basedir}</main.basedir>
